@@ -3,94 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TruthLens AI - Digital Guardian</title>
+    <title>TruthLens AI</title>
     <style>
         :root {
-            --primary-color: #2563eb;
-            --bg-color: #f8fafc;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-main: #f8fafc;
             --card-bg: #ffffff;
-            --text-color: #1e293b;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
         }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
             color: white;
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 3.5rem 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            margin: 0;
             font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
         }
 
         header p {
-            margin: 0.5rem 0 0 0;
             font-size: 1.1rem;
             opacity: 0.9;
         }
 
         main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            max-width: 900px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            gap: 2rem;
         }
 
         .card {
             background: var(--card-bg);
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-            text-align: center;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: #1e40af;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--primary-color);
+            background-color: var(--primary);
             color: white;
-            padding: 0.8rem 2rem;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background 0.3s;
-            margin-top: 1rem;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
         }
 
         .btn:hover {
-            background-color: #1d4ed8;
-        }
-
-        .edu-section {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        ul {
-            text-align: left;
-            padding-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.8rem;
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
         }
 
         footer {
             text-align: center;
             padding: 2rem;
+            color: var(--text-muted);
             font-size: 0.9rem;
-            color: #64748b;
+            margin-top: 4rem;
+            border-top: 1px solid #e2e8f0;
         }
     </style>
 </head>
@@ -98,20 +136,18 @@
 
     <header>
         <h1>TruthLens AI</h1>
-        <p>Saring Sebelum Sharing • Deteksi Berita Hoaks & AI-Generated Image</p>
+        <p>Saring Sebelum Sharing • Deteksi Berita Hoaks &amp; AI-Generated Image</p>
     </header>
 
     <main>
-        <!-- Bagian Link Teachable Machine -->
+        
         <div class="card">
             <h2>🔍 Detektor Gambar AI</h2>
             <p>Unggah gambar atau foto di sini untuk mengecek apakah foto tersebut asli atau hasil rekayasa AI (Deepfake/AI-Generated).</p>
-            <!-- GANTI LINK DI BAWAH INI DENGAN LINK TEACHABLE MACHINE KELOMPOKMU -->
-            <a href="HTTPS://TEACHABLEMACHINE.WITHGOOGLE.COM/MODELS/AS_WCTOUQ/" target="_blank" class="btn">Mulai Uji Gambar</a>
+            <a href="https://teachablemachine.withgoogle.com/models/As_wctOuQ/" class="btn" target="_blank">Mulai Uji Gambar</a>
         </div>
 
-        <!-- Bagian Edukasi / Indikator Hoaks -->
-        <div class="edu-section">
+        <div class="card">
             <h2>💡 Panduan Literasi Digital</h2>
             
             <h3>5 Indikator Utama Berita Hoaks:</h3>
@@ -126,13 +162,13 @@
             <ul>
                 <li><strong>1. Saring Sumbernya:</strong> Periksa siapa yang membuat atau menyebarkan informasi. Pastikan berasal dari media resmi atau lembaga terpercaya.</li>
                 <li><strong>2. Saring Isinya:</strong> Baca berita secara lengkap, jangan hanya membaca judulnya saja. Periksa apakah isi berita masuk akal dan didukung fakta.</li>
-                <li><strong>3. Saring Sebelum Sharing:</strong> Tanyakan pada diri sendiri: "Apakah informasi ini benar dan bermanfaat?" Jika ragu, jangan sebarkan.</li>
+                <li><strong>3. Saring Sebelum Sharing:</strong> Tanyakan pada diri sendiri: &quot;Apakah informasi ini benar dan bermanfaat?&quot; Jika ragu, jangan sebarkan.</li>
             </ul>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 TruthLens AI Team. All Rights Reserved.</p>
+        <p>© 2026 TruthLens AI Team. All Rights Reserved.</p>
     </footer>
 
 </body>
